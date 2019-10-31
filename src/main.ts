@@ -15,7 +15,7 @@ async function bootstrap() {
   );
 
   const PORT = Number.parseInt(process.env.PORT, 10) || 8080;
-  await app.listen(PORT);
+  await app.listen(PORT, '0.0.0.0');
   logger.log(`Application started on port ${PORT}`);
 }
 bootstrap();
