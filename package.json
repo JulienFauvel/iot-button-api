@@ -1,8 +1,8 @@
 {
-  "name": "flicpoc",
-  "version": "0.0.1",
-  "description": "",
-  "author": "",
+  "name": "iot-button-api",
+  "version": "1.0.0",
+  "description": "API that send the last tweet to a Telegram User in MP",
+  "author": "Julien Fauvel",
   "license": "MIT",
   "scripts": {
     "prebuild": "rimraf dist",
@@ -36,8 +36,8 @@
     "@types/dotenv": "^8.2.0",
     "@types/jest": "^24.0.18",
     "@types/node": "^12.7.5",
-    "@types/socket.io": "^2.1.4",
     "@types/supertest": "^2.0.8",
+    "@types/twit": "^2.2.23",
     "concurrently": "^4.1.0",
     "jest": "^24.9.0",
     "nodemon": "^1.18.9",

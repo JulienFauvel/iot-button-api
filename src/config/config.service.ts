@@ -8,15 +8,16 @@ export class ConfigService {
   private readonly envConfig: Record<string, string>;
 
   constructor() {
-    this.envConfig = {
-      ...process.env,
-    };
+    this.envConfig = {};
+    Object.keys(process.env).forEach(key => {
+      this.envConfig[key] = process.env[key] || '';
+    });
 
     try {
-      this.envConfig = {
-        ...this.envConfig,
-        ...dotenv.parse(fs.readFileSync('.env')),
-      };
+      const dotEnvContent = dotenv.parse(fs.readFileSync('.env'));
+      Object.keys(dotEnvContent).forEach(key => {
+        this.envConfig[key] = dotEnvContent[key] || '';
+      });
     // tslint:disable-next-line: no-empty
     } catch (err) {}
   }

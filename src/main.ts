@@ -14,8 +14,10 @@ async function bootstrap() {
     new FastifyAdapter(),
   );
 
-  const PORT = Number.parseInt(process.env.PORT, 10) || 8080;
-  await app.listen(PORT, '0.0.0.0');
+  const PORT = Number.parseInt(process.env.PORT || '8080', 10);
+  const HOST = process.env.PORT || '0.0.0.0';
+
+  await app.listen(PORT, HOST);
   logger.log(`Application started on port ${PORT}`);
 }
 bootstrap();
